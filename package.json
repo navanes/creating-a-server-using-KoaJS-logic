@@ -1,0 +1,33 @@
+{
+  "name": "nodejs-boilerplate",
+  "version": "1.0.0",
+  "description": "Node Backend Boilerplate",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "watch": "nodemon --exec babel-node src",
+    "build": "babel src --out-dir dist",
+    "start": "node dist",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:db:pg": "docker-compose -p nodejs-boilerplate -f ./tools/docker/db/postgresql/docker-compose.yaml up -d",
+    "start:db:mysql": "docker-compose -p nodejs-boilerplate -f ./tools/docker/db/mysql/docker-compose.yaml up -d",
+    "start:db:mongo": "docker-compose -p nodejs-boilerplate -f ./tools/docker/db/mongo/docker-compose.yaml up -d"
+  },
+  "repository": "https://bitbucket.org/mamble-llc/nodejs-boilerplate.git",
+  "author": "Vanand Mkrtchyan <vanand.mkrtchyan@mamble.co>",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.18.10",
+    "@babel/core": "^7.18.13",
+    "@babel/node": "^7.18.10",
+    "@babel/preset-env": "^7.18.10",
+    "nodemon": "^2.0.19"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.2",
+    "koa": "^2.13.4",
+    "koa-router": "^12.0.0",
+    "path-to-regex": "^1.3.8",
+    "path-to-regexp": "^6.2.1"
+  }
+}
